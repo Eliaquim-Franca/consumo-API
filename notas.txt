@@ -1,0 +1,32 @@
+Vamos usar a api de cep, vamos consumir a API que é publica
+1º Vamos deixar o JavaScript no modo mais rigoroso
+
+Valida o tam do que foi digitado 
+Expressão regular ^= começa, $= termina ,[] de  a 9, + = para podermos colocar mais de 1 numero na caixa.
+colocamos .test pois ele aplicara a regra na variavel que queremos
+
+colocamos async para que possamos trabalhar em etapas
+Abaixo usaremos o await, que espera uma ação ser concluida para chamarmos outra.
+
+temos que colocar a url dentro de um template string
+Apos pegarmos o cep digitado e colocarmos na url temos que passar este dado na tela 
+Usamos o fetch pois passamos a url e ele retorna o valor da url
+
+o fetch retorna uma promessa, ou seja, pode acontecer ou não, ele é um retoro assincrono, 
+por isso não da para passar o valor direto para uma variavel, então temos que
+então temos que usar os metodos para acessar os dados de retorno, usamos o then
+- fetch(url).then(console.log);
+Isto nos trara em console um REGEX, este regex tem um RESPONSE e este response tem um JSON que é o que precisamos.
+
+1º teste  fetch(url).then(respsota=>respsota.json());
+Tratando as promessas com o THEN
+pegamos nossa resposta e transformamos ela em json,(Estamos tratando ela).
+Se pedirmos a resposta no console, vira uma promessa (promise) e dento o objeto json
+Por isso temos que usar o then novamente para receber essa promessa e pegar apenas o que queremos.
+
+
+aqui ele ira retornar uma promessa por isso iremos trasnformar em json para outra var
+necessário o await para que possa receber a reposta completa
+2º Forma usando variaveis de modo assincrono esperando cada ação e passando dentro de uma variavel.
+Agora vamos preencher o formulario
+se ele digitar errado o json vem com o atributo erro.
